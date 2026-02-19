@@ -1,0 +1,112 @@
+{
+  "kind": "build_request",
+  "title": "Add username/password admin authentication and provide deployment guidance",
+  "projectName": "SMART HAITI",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-19",
+      "text": "Replace Internet Identity authentication with username/password authentication system for administrator login. Store admin credentials securely in the backend. Allow the administrator to set and change their username and password through the admin settings page.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Make an option that the Administrator of the website have a username with a password to connect with the website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin can log in with username and password instead of Internet Identity",
+        "Credentials are stored securely in the backend with password hashing",
+        "Admin settings page includes fields to update username and password",
+        "Login form validates credentials against backend",
+        "Invalid credentials display appropriate error messages",
+        "Session management maintains admin authentication state"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Update all admin pages to work with the new username/password authentication system, ensuring the administrator can manage videos, photos, backgrounds, sponsors, partners, mentors (team members), and all other content after logging in with username and password.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "whenever he wants to share videos, photos, add or remove background, edit or change pictures, for sponsors, parteners, mentors and more"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All existing admin functionality remains accessible after username/password login",
+        "AdminGuard component validates username/password authentication",
+        "Admin can upload and manage gallery photos",
+        "Admin can add and remove videos",
+        "Admin can change hero background and logo images",
+        "Admin can manage sponsors and partners",
+        "Admin can edit team member (mentor) profiles",
+        "No functionality is lost during authentication system migration"
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "Create a new admin documentation section explaining how to deploy the SMART HAITI website for free on the Internet Computer blockchain. Include step-by-step instructions for deploying the canister, configuring the custom domain, and verifying the deployment is live and accessible.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "tell me how to launch the website without pay nothing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Documentation page includes free deployment instructions for Internet Computer",
+        "Step-by-step guide covers canister deployment process",
+        "Instructions explain how to obtain a free .icp domain or configure custom domain",
+        "Documentation confirms the deployment is already hosted on Internet Computer",
+        "Deployment costs and maintenance are explained as free/minimal"
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "text": "Add SEO optimization documentation to the admin documentation page explaining how to improve search visibility for 'Smart Haiti' searches. Include guidance on adding meta tags, descriptions, keywords, and best practices for making the website appear quickly in search results. Update the HTML head with optimized meta tags including title, description, and keywords targeting 'Smart Haiti', 'SMART HAITI', Haiti education, Haiti NGO, and related terms.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "to be very visible that when somebody type Smart Haiti so that our website appear quickly"
+        ]
+      },
+      "acceptanceCriteria": [
+        "HTML head includes comprehensive meta tags with 'Smart Haiti' and related keywords",
+        "Meta description clearly describes SMART HAITI organization and mission",
+        "Open Graph tags are added for social media sharing",
+        "Admin documentation explains SEO best practices",
+        "Documentation covers how to improve search rankings organically",
+        "Title tag optimized for 'SMART HAITI' searches",
+        "Keywords include variations: 'Smart Haiti', 'SMART HAITI', 'Haiti education NGO'"
+      ]
+    }
+  ],
+  "constraints": [
+    "Maintain single-actor backend architecture in backend/main.mo",
+    "Do not modify immutable frontend paths: useInternetIdentity hooks, useActor.ts, main.tsx, components/ui",
+    "Preserve all existing admin functionality during authentication migration",
+    "Ensure password storage follows security best practices with hashing",
+    "Keep deployment instructions specific to Internet Computer platform"
+  ],
+  "nonGoals": [
+    "Implementing third-party authentication providers",
+    "Adding multi-user admin roles or permissions beyond single administrator",
+    "Paid hosting or deployment options",
+    "Automated SEO tools or paid search engine submission services",
+    "Email verification or password recovery features"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Modern NGO website for SMART HAITI - an organization helping secondary school students through conferences, formations, and mentorship. Website features photo galleries from schools, video showcases, donation system, sponsor/partner displays, team profiles, mission/about sections, event schedule, contact form, social media integration, and blog/news section.",
+  "architectural_notes": [
+    "NGO website with multiple content sections and donation capabilities",
+    "Stripe integration required for donation processing",
+    "Database storage for contact form submissions",
+    "Media management for photos and videos from school activities",
+    "Responsive design framework for mobile/tablet/desktop compatibility",
+    "WhatsApp business integration for direct messaging",
+    "Authentication system required for admin dashboard access with username/password credentials",
+    "SEO optimization needed including meta tags, sitemap, and proper indexing for search visibility",
+    "Free hosting options to be documented (e.g., Vercel, Netlify, GitHub Pages for frontend)"
+  ],
+  "known_issues": [
+    "Email newsletter automation excluded due to account limitations - newsletter content can be posted to blog section instead"
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-homepage-with-hero-section-featuring-the-ngo-name-smart-haiti-mission-statement-and-call-to-action-buttons-for-donations-and-learning-more-about-the-organization",
+      "title": "Create a homepage with hero section featuring the NGO name 'SMART HAITI', mission statement, and call-to-action buttons for donations and learning more about the organization",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-photo-gallery-system-to-display-images-from-schools-where-mentors-teach-with-categories-or-filters-for-different-schools-or-events",
+      "title": "Implement photo gallery system to display images from schools where mentors teach, with categories or filters for different schools or events",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-video-showcase-section-for-conference-videos-with-thumbnails-titles-and-descriptions",
+      "title": "Create video showcase section for conference videos with thumbnails, titles, and descriptions",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-donation-page-with-stripe-payment-integration-supporting-one-time-and-recurring-donations",
+      "title": "Build donation page with Stripe payment integration supporting one-time and recurring donations",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-sponsors-and-partners-showcase-section-displaying-logos-names-and-descriptions-with-links-to-their-websites",
+      "title": "Create sponsors and partners showcase section displaying logos, names, and descriptions with links to their websites",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-team-staff-profiles-section-showing-photos-names-roles-and-brief-bios-of-organization-members",
+      "title": "Implement team/staff profiles section showing photos, names, roles, and brief bios of organization members",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-about-section-with-multiple-pages-covering-mission-statement-vision-community-impact-and-organizational-values-for-smart-haiti",
+      "title": "Create About section with multiple pages covering mission statement, vision, community impact, and organizational values for SMART HAITI",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-events-schedule-calendar-displaying-upcoming-conferences-formations-and-mentorship-sessions-with-dates-times-locations-and-descriptions",
+      "title": "Build events schedule/calendar displaying upcoming conferences, formations, and mentorship sessions with dates, times, locations, and descriptions",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-contact-form-that-saves-submissions-to-backend-database-with-fields-for-name-email-subject-and-message",
+      "title": "Implement contact form that saves submissions to backend database with fields for name, email, subject, and message",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-social-media-integration-with-prominent-links-to-smart-haiti-s-facebook-x-twitter-tiktok-and-instagram-profiles-in-header-footer-and-relevant-pages",
+      "title": "Add social media integration with prominent links to SMART HAITI's Facebook, X (Twitter), TikTok, and Instagram profiles in header, footer, and relevant pages",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-blog-news-section-where-admin-can-publish-articles-updates-and-newsletter-content-with-title-featured-image-date-author-and-rich-text-content",
+      "title": "Create blog/news section where admin can publish articles, updates, and newsletter content with title, featured image, date, author, and rich text content",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-modern-responsive-ui-with-professional-ngo-aesthetic-using-warm-trustworthy-colors-avoid-blue-and-purple-clean-typography-and-engaging-layouts-that-work-seamlessly-across-desktop-tablet-and-mobile-devices",
+      "title": "Design modern, responsive UI with professional NGO aesthetic using warm, trustworthy colors (avoid blue and purple), clean typography, and engaging layouts that work seamlessly across desktop, tablet, and mobile devices",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-admin-dashboard-with-authentication-for-managing-all-content-sections-including-photos-videos-blog-posts-events-staff-profiles-sponsors-and-contact-submissions",
+      "title": "Implement admin dashboard with authentication for managing all content sections including photos, videos, blog posts, events, staff profiles, sponsors, and contact submissions",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-whatsapp-floating-action-button-that-links-directly-to-smart-haiti-s-whatsapp-account-the-button-should-be-fixed-positioned-in-the-bottom-right-corner-of-all-pages-visible-on-desktop-and-mobile-with-a-green-whatsapp-icon-the-link-format-should-be-https-wa-me-phone-number-where-phone-number-is-configurable-through-the-admin-dashboard",
+      "title": "Add a WhatsApp floating action button that links directly to SMART HAITI's WhatsApp account. The button should be fixed positioned in the bottom-right corner of all pages, visible on desktop and mobile, with a green WhatsApp icon. The link format should be https://wa.me/[PHONE_NUMBER] where PHONE_NUMBER is configurable through the admin dashboard.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-settings-page-for-managing-the-whatsapp-contact-phone-number-and-other-site-wide-configuration-options-include-fields-for-whatsapp-phone-number-in-international-format-without-symbol-validation-to-ensure-proper-format-and-save-functionality-that-persists-to-backend",
+      "title": "Create an admin settings page for managing the WhatsApp contact phone number and other site-wide configuration options. Include fields for WhatsApp phone number (in international format without + symbol), validation to ensure proper format, and save functionality that persists to backend.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-comprehensive-admin-documentation-page-explaining-how-to-manage-all-website-content-including-uploading-photos-to-gallery-with-categories-adding-videos-with-youtube-vimeo-urls-creating-blog-posts-with-featured-images-managing-events-with-dates-and-locations-updating-team-member-profiles-editing-about-sections-managing-sponsors-and-changing-the-site-logo-include-step-by-step-instructions-with-screenshots-or-visual-guides-for-each-content-type",
+      "title": "Create comprehensive admin documentation page explaining how to manage all website content including: uploading photos to gallery with categories, adding videos with YouTube/Vimeo URLs, creating blog posts with featured images, managing events with dates and locations, updating team member profiles, editing About sections, managing sponsors, and changing the site logo. Include step-by-step instructions with screenshots or visual guides for each content type.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-logo-management-functionality-to-admin-dashboard-allowing-upload-and-replacement-of-the-smart-haiti-logo-displayed-in-the-header-support-uploading-a-new-logo-image-file-preview-before-saving-and-automatically-update-the-logo-across-all-pages-store-the-logo-as-a-backend-blob-and-serve-it-through-the-frontend",
+      "title": "Add logo management functionality to admin dashboard allowing upload and replacement of the SMART HAITI logo displayed in the header. Support uploading a new logo image file, preview before saving, and automatically update the logo across all pages. Store the logo as a backend blob and serve it through the frontend.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-background-image-upload-capability-to-the-homepage-hero-section-through-admin-dashboard-allow-uploading-a-custom-background-image-preview-before-saving-and-ensure-proper-overlay-contrast-so-hero-text-remains-readable-store-background-as-backend-blob-and-apply-to-hero-section",
+      "title": "Add background image upload capability to the homepage hero section through admin dashboard. Allow uploading a custom background image, preview before saving, and ensure proper overlay/contrast so hero text remains readable. Store background as backend blob and apply to hero section.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-internet-identity-authentication-with-username-password-authentication-system-for-administrator-login-store-admin-credentials-securely-in-the-backend-allow-the-administrator-to-set-and-change-their-username-and-password-through-the-admin-settings-page",
+      "title": "Replace Internet Identity authentication with username/password authentication system for administrator login. Store admin credentials securely in the backend. Allow the administrator to set and change their username and password through the admin settings page.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-admin-documentation-section-explaining-how-to-deploy-the-smart-haiti-website-for-free-on-the-internet-computer-blockchain-include-step-by-step-instructions-for-deploying-the-canister-configuring-the-custom-domain-and-verifying-the-deployment-is-live-and-accessible",
+      "title": "Create a new admin documentation section explaining how to deploy the SMART HAITI website for free on the Internet Computer blockchain. Include step-by-step instructions for deploying the canister, configuring the custom domain, and verifying the deployment is live and accessible.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-seo-optimization-documentation-to-the-admin-documentation-page-explaining-how-to-improve-search-visibility-for-smart-haiti-searches-include-guidance-on-adding-meta-tags-descriptions-keywords-and-best-practices-for-making-the-website-appear-quickly-in-search-results-update-the-html-head-with-optimized-meta-tags-including-title-description-and-keywords-targeting-smart-haiti-smart-haiti-haiti-education-haiti-ngo-and-related-terms",
+      "title": "Add SEO optimization documentation to the admin documentation page explaining how to improve search visibility for 'Smart Haiti' searches. Include guidance on adding meta tags, descriptions, keywords, and best practices for making the website appear quickly in search results. Update the HTML head with optimized meta tags including title, description, and keywords targeting 'Smart Haiti', 'SMART HAITI', Haiti education, Haiti NGO, and related terms.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Photo galleries to share pictures from schools where mentors teach",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Video section to showcase conference videos",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Donation page with Stripe integration",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Sponsors and partners showcase with logos and information",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Team/staff profiles section with photos",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "About sections for mission, vision, and community information",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Schedule/calendar for upcoming events and conferences",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Contact form that saves submissions to database",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Social media links integration (Facebook, X, TikTok, Instagram)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Blog/news section for updates and articles",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Modern, responsive design that works on all devices",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "WhatsApp contact button linking directly to organization's WhatsApp account",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Admin authentication system with username/password for secure access to admin dashboard and content management",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "SEO optimization and deployment guidance for free hosting with high visibility in search results when users search 'Smart Haiti'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Update all admin pages to work with the new username/password authentication system, ensuring the administrator can manage videos, photos, backgrounds, sponsors, partners, mentors (team members), and all other content after logging in with username and password.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "SMART HAITI",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

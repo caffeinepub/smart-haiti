@@ -1,0 +1,78 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-replace-internet-identity-authentication-with-username-password-authentication-system-for-administrator-login-store-admin-credentials-securely-in-the-backend-allow-the-administrator-to-set-and-change-their-username-and-password-through-the-admin-settings-page",
+      "featureTitle": "Replace Internet Identity authentication with username/password authentication system for administrator login. Store admin credentials securely in the backend. Allow the administrator to set and change their username and password through the admin settings page.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/auth/AdminGuard.tsx",
+        "frontend/src/components/auth/AdminLoginForm.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/hooks/useAdminAuth.ts",
+        "frontend/src/pages/admin/AdminLoginPage.tsx",
+        "frontend/src/pages/admin/AdminSettingsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-new-admin-documentation-section-explaining-how-to-deploy-the-smart-haiti-website-for-free-on-the-internet-computer-blockchain-include-step-by-step-instructions-for-deploying-the-canister-configuring-the-custom-domain-and-verifying-the-deployment-is-live-and-accessible",
+      "featureTitle": "Create a new admin documentation section explaining how to deploy the SMART HAITI website for free on the Internet Computer blockchain. Include step-by-step instructions for deploying the canister, configuring the custom domain, and verifying the deployment is live and accessible.",
+      "files": [
+        "frontend/src/pages/admin/AdminDocumentationPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-21"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-seo-optimization-documentation-to-the-admin-documentation-page-explaining-how-to-improve-search-visibility-for-smart-haiti-searches-include-guidance-on-adding-meta-tags-descriptions-keywords-and-best-practices-for-making-the-website-appear-quickly-in-search-results-update-the-html-head-with-optimized-meta-tags-including-title-description-and-keywords-targeting-smart-haiti-smart-haiti-haiti-education-haiti-ngo-and-related-terms",
+      "featureTitle": "Add SEO optimization documentation to the admin documentation page explaining how to improve search visibility for 'Smart Haiti' searches. Include guidance on adding meta tags, descriptions, keywords, and best practices for making the website appear quickly in search results. Update the HTML head with optimized meta tags including title, description, and keywords targeting 'Smart Haiti', 'SMART HAITI', Haiti education, Haiti NGO, and related terms.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/pages/admin/AdminDocumentationPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "stripe@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "http-outcalls@3.0.0"
+      ],
+      "testIds": [
+        "REQ-22"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

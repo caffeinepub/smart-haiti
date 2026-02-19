@@ -1,0 +1,110 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-19T22:13:40.046Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-19",
+        "summary": "Replace Internet Identity authentication with username/password authentication system for administrator login. Store admin credentials securely in the backend. Allow the administrator to set and change their username and password through the admin settings page.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/auth/AdminLoginForm.tsx",
+          "frontend/src/components/auth/AdminGuard.tsx",
+          "frontend/src/hooks/useAdminAuth.ts",
+          "frontend/src/pages/admin/AdminSettingsPage.tsx",
+          "frontend/src/pages/admin/AdminLoginPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/hooks/useActor.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/auth/AdminLoginForm.tsx",
+          "frontend/src/components/auth/AdminGuard.tsx",
+          "frontend/src/hooks/useAdminAuth.ts",
+          "frontend/src/pages/admin/AdminSettingsPage.tsx",
+          "frontend/src/pages/admin/AdminLoginPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/layout/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Update all admin pages to work with the new username/password authentication system, ensuring the administrator can manage videos, photos, backgrounds, sponsors, partners, mentors (team members), and all other content after logging in with username and password.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/components/layout/AdminLayout.tsx",
+          "frontend/src/pages/admin/AdminDashboardPage.tsx",
+          "frontend/src/pages/admin/AdminGalleryPage.tsx",
+          "frontend/src/pages/admin/AdminVideosPage.tsx",
+          "frontend/src/pages/admin/AdminBlogPage.tsx",
+          "frontend/src/pages/admin/AdminEventsPage.tsx",
+          "frontend/src/pages/admin/AdminTeamPage.tsx",
+          "frontend/src/pages/admin/AdminSponsorsPage.tsx",
+          "frontend/src/pages/admin/AdminAboutPage.tsx",
+          "frontend/src/pages/admin/AdminContactSubmissionsPage.tsx"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-21",
+        "summary": "Create a new admin documentation section explaining how to deploy the SMART HAITI website for free on the Internet Computer blockchain. Include step-by-step instructions for deploying the canister, configuring the custom domain, and verifying the deployment is live and accessible.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/admin/AdminDocumentationPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/admin/AdminDocumentationPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-22",
+        "summary": "Add SEO optimization documentation to the admin documentation page explaining how to improve search visibility for 'Smart Haiti' searches. Include guidance on adding meta tags, descriptions, keywords, and best practices for making the website appear quickly in search results. Update the HTML head with optimized meta tags including title, description, and keywords targeting 'Smart Haiti', 'SMART HAITI', Haiti education, Haiti NGO, and related terms.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html",
+          "frontend/src/pages/admin/AdminDocumentationPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/index.html",
+          "frontend/src/pages/admin/AdminDocumentationPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/auth/AdminGuard.tsx",
+    "frontend/src/components/auth/AdminLoginButton.tsx",
+    "frontend/src/components/auth/AdminLoginForm.tsx",
+    "frontend/src/components/auth/LoginButton.tsx",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useAdminAuth.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/BlogPostPage.tsx",
+    "frontend/src/pages/admin/AdminDocumentationPage.tsx",
+    "frontend/src/pages/admin/AdminLayout.tsx",
+    "frontend/src/pages/admin/AdminLoginPage.tsx",
+    "frontend/src/pages/admin/AdminSettingsPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

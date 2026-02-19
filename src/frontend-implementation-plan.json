@@ -1,0 +1,170 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add username/password admin authentication and provide deployment guidance",
+  "requirements": [
+    {
+      "id": "REQ-19",
+      "summary": "Replace Internet Identity authentication with username/password authentication system for administrator login",
+      "acceptanceCriteria": [
+        "Admin can log in with username and password instead of Internet Identity",
+        "Credentials are stored securely in the backend with password hashing",
+        "Admin settings page includes fields to update username and password",
+        "Login form validates credentials against backend",
+        "Invalid credentials display appropriate error messages",
+        "Session management maintains admin authentication state"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/auth/AdminLoginForm.tsx",
+          "operation": "create",
+          "description": "Create new admin login form component with username and password fields. Include form validation, error handling for invalid credentials, and session token storage. Use backend methods adminLogin() and verifyAdminSession(). Display error messages for failed authentication attempts. On successful login, store session token in sessionStorage and redirect to admin dashboard."
+        },
+        {
+          "path": "frontend/src/components/auth/AdminGuard.tsx",
+          "operation": "modify",
+          "description": "Replace Internet Identity authentication checks with username/password session validation. Use verifyAdminSession() backend method with stored session token. If session is invalid or missing, redirect to admin login page. Remove dependencies on Internet Identity hooks and principal-based authentication."
+        },
+        {
+          "path": "frontend/src/hooks/useAdminAuth.ts",
+          "operation": "create",
+          "description": "Create custom hook for admin authentication state management. Provide login function that calls adminLogin() backend method, logout function that calls adminLogout() and clears session token from sessionStorage, and session validation using verifyAdminSession(). Include loading states and error handling. Export authentication status and session token state."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminSettingsPage.tsx",
+          "operation": "modify",
+          "description": "Add username and password change form section to admin settings page. Include fields for new username, current password (for verification), new password, and confirm new password. Validate password matching on frontend. Call setAdminCredentials() backend method with new credentials. Display success toast on successful update and error messages for validation failures. Include password strength indicator."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminLoginPage.tsx",
+          "operation": "create",
+          "description": "Create dedicated admin login page that renders AdminLoginForm component. Include SMART HAITI branding, centered card layout, and form container. Show initial setup message if isAdminConfigured() returns false, prompting admin to set initial credentials. Use useAdminAuth hook for authentication flow."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add new route for admin login page at path '/admin/login'. Remove ProfileSetupModal and Internet Identity dependencies from admin routes. Ensure AdminGuard redirects to '/admin/login' instead of triggering Internet Identity login. Update admin route protection to use session-based authentication."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Replace LoginButton component with AdminLoginButton that links to '/admin/login' route for admin users. Keep LoginButton for public user authentication if needed, or remove it entirely if only admin authentication is required. Update navigation to show admin login link in appropriate context."
+        },
+        {
+          "path": "frontend/src/hooks/useActor.ts",
+          "operation": "modify",
+          "description": "Update actor initialization to work with session-based admin authentication. Remove Internet Identity delegation logic for admin flows. Ensure actor creation uses anonymous identity for public pages and authenticated identity for admin pages based on session token validation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "summary": "Update all admin pages to work with the new username/password authentication system",
+      "acceptanceCriteria": [
+        "All existing admin functionality remains accessible after username/password login",
+        "AdminGuard component validates username/password authentication",
+        "Admin can upload and manage gallery photos",
+        "Admin can add and remove videos",
+        "Admin can change hero background and logo images",
+        "Admin can manage sponsors and partners",
+        "Admin can edit team member (mentor) profiles",
+        "No functionality is lost during authentication system migration"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/AdminLayout.tsx",
+          "operation": "modify",
+          "description": "Update AdminLayout to use session-based authentication from useAdminAuth hook instead of Internet Identity. Ensure AdminGuard properly validates admin session before rendering admin content. Add logout button that clears session token and redirects to admin login page. Remove Internet Identity provider dependencies."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminDashboardPage.tsx",
+          "operation": "modify",
+          "description": "Verify dashboard page works with new authentication system. Ensure statistics and data fetching use authenticated actor with session validation. Display admin username from session context if available. No functional changes needed beyond authentication integration verification."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminGalleryPage.tsx",
+          "operation": "modify",
+          "description": "Verify gallery management page works with session-based authentication. Ensure image upload, delete, and update operations use authenticated actor. Confirm ExternalBlob uploads function correctly with new authentication system. Test that all CRUD operations for gallery images remain functional."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminVideosPage.tsx",
+          "operation": "modify",
+          "description": "Verify video management page works with session-based authentication. Ensure video add, delete, and update operations use authenticated actor. Confirm thumbnail uploads and YouTube/Vimeo URL validation remain functional with new authentication system."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminBlogPage.tsx",
+          "operation": "modify",
+          "description": "Verify blog post management works with session-based authentication. Ensure blog post creation, deletion, and featured image uploads use authenticated actor. Confirm all blog CRUD operations remain functional after authentication migration."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminEventsPage.tsx",
+          "operation": "modify",
+          "description": "Verify events management works with session-based authentication. Ensure event creation, deletion, and image uploads use authenticated actor. Confirm all event CRUD operations remain functional with new authentication system."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminTeamPage.tsx",
+          "operation": "modify",
+          "description": "Verify team member (mentor) management works with session-based authentication. Ensure team member add, delete, and photo uploads use authenticated actor. Confirm all team member CRUD operations remain functional after authentication migration."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminSponsorsPage.tsx",
+          "operation": "modify",
+          "description": "Verify sponsor/partner management works with session-based authentication. Ensure sponsor add, delete, and logo uploads use authenticated actor. Confirm all sponsor CRUD operations remain functional with new authentication system."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminAboutPage.tsx",
+          "operation": "modify",
+          "description": "Verify about section management works with session-based authentication. Ensure about section add, delete, and image uploads use authenticated actor. Confirm all about section CRUD operations remain functional after authentication migration."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminContactSubmissionsPage.tsx",
+          "operation": "modify",
+          "description": "Verify contact submissions viewing and deletion works with session-based authentication. Ensure contact submission data fetching and delete operations use authenticated actor. Confirm all contact submission management remains functional with new authentication system."
+        }
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "summary": "Create admin documentation section explaining how to deploy SMART HAITI website for free on Internet Computer blockchain",
+      "acceptanceCriteria": [
+        "Documentation page includes free deployment instructions for Internet Computer",
+        "Step-by-step guide covers canister deployment process",
+        "Instructions explain how to obtain a free .icp domain or configure custom domain",
+        "Documentation confirms the deployment is already hosted on Internet Computer",
+        "Deployment costs and maintenance are explained as free/minimal"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/admin/AdminDocumentationPage.tsx",
+          "operation": "modify",
+          "description": "Add new accordion section titled 'Deploying Your Website' to the admin documentation page. Include comprehensive deployment instructions for Internet Computer blockchain covering: (1) Prerequisites - dfx installation and identity setup, (2) Deployment steps - dfx deploy commands for local and mainnet, (3) Free .icp domain registration process through Internet Computer naming service, (4) Custom domain configuration with DNS setup and canister configuration, (5) Verification steps to confirm deployment is live, (6) Cost breakdown explaining free hosting on Internet Computer with minimal cycle costs, (7) Troubleshooting common deployment issues. Use clear step-by-step format with code examples and command snippets."
+        }
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "summary": "Add SEO optimization documentation and update HTML meta tags for improved search visibility",
+      "acceptanceCriteria": [
+        "HTML head includes comprehensive meta tags with 'Smart Haiti' and related keywords",
+        "Meta description clearly describes SMART HAITI organization and mission",
+        "Open Graph tags are added for social media sharing",
+        "Admin documentation explains SEO best practices",
+        "Documentation covers how to improve search rankings organically",
+        "Title tag optimized for 'SMART HAITI' searches",
+        "Keywords include variations: 'Smart Haiti', 'SMART HAITI', 'Haiti education NGO'"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update HTML head section with comprehensive SEO meta tags. Add optimized title tag: 'SMART HAITI - Empowering Education in Haiti | Haiti NGO'. Add meta description: 'SMART HAITI is a leading educational non-profit organization dedicated to empowering students and communities in Haiti through mentorship, conferences, and training programs.' Add meta keywords including: 'Smart Haiti, SMART HAITI, Haiti education, Haiti NGO, Haiti non-profit, Haiti mentorship, education in Haiti, Haiti youth development, Haiti schools, Haiti community development'. Add Open Graph tags for social media: og:title, og:description, og:type (website), og:image (using generated/smart-haiti-logo.dim_400x400.png), og:url. Add Twitter Card meta tags: twitter:card, twitter:title, twitter:description, twitter:image. Add canonical link tag. Include viewport meta tag if missing."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminDocumentationPage.tsx",
+          "operation": "modify",
+          "description": "Add new accordion section titled 'SEO Optimization Guide' to admin documentation page. Include comprehensive SEO guidance covering: (1) Understanding SEO basics and why it matters for visibility, (2) How meta tags work and their importance for search engines, (3) Best practices for title tags and meta descriptions, (4) Using relevant keywords naturally in content, (5) Importance of quality content and regular updates, (6) Social media integration and Open Graph tags, (7) Tips for improving search rankings organically: consistent content updates, quality backlinks, mobile responsiveness, fast page load times, (8) How to monitor search performance using Google Search Console, (9) Avoiding common SEO mistakes. Explain that the website already includes optimized meta tags for 'SMART HAITI' and related terms."
+        }
+      ]
+    }
+  ]
+}
